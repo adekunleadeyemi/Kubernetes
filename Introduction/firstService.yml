@@ -8,7 +8,7 @@ spec:
   selector:
     app: webapp
 
-  port:
+  ports:
     # This is the port that is exposed in the container and how to access the containers
     - name: http
       port: 80
