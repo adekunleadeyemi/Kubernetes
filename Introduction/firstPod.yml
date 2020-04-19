@@ -1,11 +1,30 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: webapp
+  name: webapp-release-0
+  # Labels are what the service pods use to identify which pods to service.
   labels:
     app: webapp
+    release: "0"
 
 spec:
   containers:
   - name: webapp
     image: richardchesterwood/k8s-fleetman-webapp-angular:release0
+
+# To have multiple Pods in your pod file you can use "---" to seperate the pods
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webapp-release-0-5
+  # Labels are what the service pods use to identify which pods to service.
+  labels:
+    app: webapp
+    release: "0-5"
+
+spec:
+  containers:
+  - name: webapp
+    image: richardchesterwood/k8s-fleetman-webapp-angular:release0-5
