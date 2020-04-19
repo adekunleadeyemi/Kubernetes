@@ -9,8 +9,10 @@ Basic understanding and code deployment of kubernetes and deploying this to AWS 
 - Ensure you have enabled registry credentials in minikube. this is to talk to your aws account.
 - Ensure that you have right access to AWS account.
 
-# Hello World Application
+# Introduction
 
-- Once the requirement has been met do the following
-  - kubectl apply -f deployment.yml
-  - kubectl apply -f service.yml
+- Once the basic requirement has been met do the following
+  - copy the files in the introduction directory to your local environment
+  - ensure that your minikube is running by doing "minikube status" and ensure that it is running
+  - Run "kubectl apply -f firstPod.yml"
+  - Run "kubectl apply -f firstService.yml"
