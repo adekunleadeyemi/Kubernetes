@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  # This defines the number of pods that needs to be running at any particular time
+  name: replicaset-firstpod
+
+spec:
+  # The selector is needed when using replicaset as it is mandatory. it serves the same function as it does in services.
+  selector:
+    # matchLabels defines the exact labels to look out for. its the same as what is define in pods template below
+    matchLabels:
+      app: webapp
+  # This is the number of Pods that needs to be running at anyone time.
+  replicas: 1
+  # this is a template for the pods that we are creating. This is similar to creating Pods
+  template:
+    metadata:
+      labels:
+        app: webapp
+        release: "0"
+
+    spec:
+      containers:
+      - name: webapp
+        image: richardchesterwood/k8s-fleetman-webapp-angular:release0
