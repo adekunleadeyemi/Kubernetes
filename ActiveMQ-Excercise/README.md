@@ -15,4 +15,4 @@ To deploy with defining how many replicas you want, run the following cmds
 
 To deploy with self monitoring and self healing, run the following cmds
 - kubectl apply -f Service.yml
--kiubectl apply -f deployment.yml
+- kubectl apply -f deployment.yml
