@@ -8,3 +8,7 @@
 to deploy basic pods without self monitoring, run the following cmds
 - kubectl apply -f service.yml
 - kubectl apply -f pods.yml
+
+To deploy with defining how many replicas you want, run the following cmds
+- kubectl apply -f service.yml
+- kubectl apply -f replicaset.yml
