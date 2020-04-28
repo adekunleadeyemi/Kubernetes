@@ -1,13 +1,14 @@
+# This defines the number of pods that needs to be running at any particular time
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  # This defines the number of pods that needs to be running at any particular time
+  # This is the name of the replicaset
   name: replicaset-firstpod
 
 spec:
   # The selector is needed when using replicaset as it is mandatory. it serves the same function as it does in services.
   selector:
-    # matchLabels defines the exact labels to look out for. its the same as what is define in pods template below
+    # matchLabels defines the exact labels to look out for. its the same as what is define in labels section in pods template below
     matchLabels:
       app: webapp
   # This is the number of Pods that needs to be running at anyone time.
