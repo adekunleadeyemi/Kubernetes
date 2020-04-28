@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: activemq-release1
+
+spec:
+  minReadySeconds: 10
+  selector:
+    matchLabels:
+      app: activemq
+      release: "1"
+
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: activemq
+        release: "1"
+
+    spec:
+      containers:
+      - name: activemq-release1
+        image: richardchesterwood/k8s-fleetman-queue:release1
