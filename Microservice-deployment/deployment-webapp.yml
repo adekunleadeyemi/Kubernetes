@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: first-deployment
+# This section defines the replicasets for the Pods
+spec:
+  minReadySeconds: 30
+  selector:
+    matchLabels:
+      app: webapps
+
+  replicas: 2
+  # this is a template for the pods that we are creating. This is similar to creating Pods
+  template:
+    metadata:
+      labels:
+        app: webapps
+
+    spec:
+      containers:
+      - name: new-deployment
+        image: richardchesterwood/k8s-fleetman-webapp-angular:release0-5
